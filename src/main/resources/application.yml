@@ -1,0 +1,7 @@
+spring:
+  config:
+    import: optional:file:.env[.properties]
+
+brevo:
+  key: ${BREVO_API_KEY}
+  url: ${BREVO_API_URL}
