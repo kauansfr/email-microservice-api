@@ -7,8 +7,8 @@ import org.springframework.web.reactive.function.client.WebClient;
 
 @Configuration
 public class WebClientConfig {
-    @Value("brevo.key") private String brevoKey;
-    @Value("brevo.url") private String brevoUrl;
+    @Value("${brevo.key}") private String brevoKey;
+    @Value("${brevo.url}") private String brevoUrl;
 
     @Bean
     public WebClient.Builder webClientBuilder() {

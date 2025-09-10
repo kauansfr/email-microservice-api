@@ -1,14 +1,15 @@
 package com.azenithsolutions.emailmicroservice.infrastructure.adapter;
 
-import com.azenithsolutions.emailmicroservice.domain.EmailBudget;
-import com.azenithsolutions.emailmicroservice.domain.EmailGateway;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import com.azenithsolutions.emailmicroservice.domain.EmailBudget;
+import com.azenithsolutions.emailmicroservice.domain.EmailGateway;
 
 @Service
 public class EmailGatewayAdapter implements EmailGateway {
@@ -45,7 +46,7 @@ public class EmailGatewayAdapter implements EmailGateway {
                 "name",budget.getToName()
         )));
         payload.put("subject", budget.getSubject());
-        payload.put("content", budget.getContent());
+        payload.put("htmlContent", budget.getContent());
 
         return payload;
     }
