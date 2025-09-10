@@ -8,3 +8,12 @@ brevo:
 
 server:
   port: 8081
+
+app:
+  messaging:
+    email:
+      exchange: ${EXCHANGE_NAME}
+      queue: ${QUEUE_NAME}
+      routing-key: ${ROUTING_KEY}
+      dlx: ${DLX_NAME}
+      dlq: ${DLQ_NAME}
